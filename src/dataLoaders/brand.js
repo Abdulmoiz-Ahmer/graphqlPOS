@@ -6,7 +6,7 @@ export const brand = {
     const brands = await BrandModel.find({
       userId: { $in: userIds },
     });
-    const data = userIds.map((id) =>
+    const data = userIds.forEach((id) =>
       brands.filter(({ userId }) => userId.toString() === id.toString())
     );
     return data;
